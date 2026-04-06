@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(270deg,#ff6a00,#ee0979,#00c6ff,#0072ff);
+    background-size: 800%800%;
+    animation: gradientMove 12s ease infinite;
+}
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.header{
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 50px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: black;
+}
+
+.login-btn {
+    background: linear-gradient(45deg, #06b6d4, #8b5cf6);
+    transition: transform 0.2s;
+}
+
+.login-btn:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+.cat-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(8px);
+}
+
+.cat-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+.option-btn {
+    transition: all 0.2s ease;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    background: #1e293b;
+    border: 2px solid transparent;
+}
+
+/* Correct Answer Styling */
+.correct-reveal {
+    background-color: #059669 !important; /* Green */
+    border-color: #34d399 !important;
+    color: white !important;
+}
+
+/* Wrong Answer Styling */
+.wrong-reveal {
+    background-color: #dc2626 !important; /* Red */
+    border-color: #f87171 !important;
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+#timer-ring {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+}
+/* Modal Background Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darkens the screen */
+    backdrop-filter: blur(5px); /* Blurs the quiz behind it */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.3s ease;
+}
+
+/* The Alert Box */
+.modal-content {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    width: 350px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-header .icon {
+    font-size: 50px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-content h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.modal-content p {
+    margin: 20px 0;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* The Button */
+#modal-btn {
+    background: white;
+    color: #6e8efb;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#modal-btn:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none !important;
+}
+
+/* Animation */
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+/* This code runs only on screens smaller than 768px (tablets and phones) */
+@media (max-width: 768px) {
+  
+  h1 {
+    font-size: 1.5rem; /* Make the college name text smaller */
+  }
+
+  .main-container {
+    flex-direction: column; /* Stack elements vertically instead of side-by-side */
+    width: 95%;
+  }
+
+  img {
+    width: 100%; /* Make the college image fit the screen width */
+    height: auto;
+  }
+
+  .quiz-link {
+    font-size: 18px;
+    padding: 15px; /* Make buttons easier to tap with fingers */
+  }
+}
+.link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows it to wrap nicely if the screen is tiny */
+  gap: 10px;
+}
